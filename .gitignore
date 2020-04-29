@@ -1,6 +1,7 @@
 # Created by https://www.gitignore.io/api/linux
 # Edit at https://www.gitignore.io/?templates=linux
 
+/venv/*
 ### Linux ###
 *~
 
@@ -9,7 +10,7 @@
 
 # KDE directory preferences
 .directory
-.venv
+
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
