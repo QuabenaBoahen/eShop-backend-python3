@@ -31,7 +31,7 @@ class Product(models.Model):
 class Orders(models.Model):
  orderId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
  user = models.ForeignKey(User, on_delete=models.CASCADE)
- orderAmount = models.DecimalField(null=True, blank=False, max_digits=5, decimal_places=2)
+ orderAmount = models.DecimalField(blank=False, max_digits=5, decimal_places=2)
  orderShipName = models.CharField(blank=False, max_length=100)
  orderShipAddress1 = models.CharField(blank=False, max_length=100)
  orderShipAddress2 = models.CharField(blank=True, max_length=100, null=True)
@@ -45,7 +45,7 @@ class Orders(models.Model):
  orderEmail = models.CharField(blank=True, max_length=100, null=True)
  orderDate = models.DateTimeField(default=timezone.now)
  orderShipped = models.BooleanField(default=False)
- orderTrackingNumber = models.CharField(blank=False, null=True, max_length=100)
+ orderTrackingNumber = models.UUIDField(blank=False, default=uuid.uuid4, unique=True)
 
 class OrderDetails(models.Model):
  detailId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

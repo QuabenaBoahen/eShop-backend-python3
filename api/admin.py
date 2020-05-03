@@ -9,4 +9,8 @@ class ProductAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
  pass
 
+@admin.register(Orders)
+class OrdersAdmin(admin.ModelAdmin):
+ pass
+
 
